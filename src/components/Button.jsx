@@ -1,16 +1,12 @@
-import React from "react";
+import React from "react"
 
-export default class Button extends React.PureComponent{
-    constructor(props){
-        super(props);
-    }
+const Button = React.memo((props)=>{
+    return <button 
+        className={"fw-bold btn btn-" + props.color}
+        onClick={props.onClick}
+        >
+        {props.children}
+    </button>
+});
 
-    render(){
-        return <button 
-            className={"fw-bold btn btn-" + this.props.color}
-            onClick={this.props.onClick}
-            >
-            {this.props.children}
-        </button>
-    }
-}
+export default Button;
