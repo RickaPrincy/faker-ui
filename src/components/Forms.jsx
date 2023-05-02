@@ -22,6 +22,10 @@ export default class Froms extends React.Component{
         this.showRemoveColumn = this.showRemoveColumn.bind(this);
     }
 
+    /**
+     * Change the state fileName or numberOfRows
+     * @param {DOM_Event} event DOM Event
+     */
     handleChange(event){
         switch(event.target.type){
             case "number" : 
@@ -35,12 +39,23 @@ export default class Froms extends React.Component{
 
         event.preventDefault();
     }
-
+    /**
+     * Call a function who generate all the insert
+     * @param {DOM_Event} event DOM Event
+     */
     handleSubmit(event){
         console.log("submit");
         event.preventDefault();
     }
 
+    /**
+     * Add new column on the state columns with 
+     * id: faker.uuid...
+     * name: ""...
+     * type: "varchar"...
+     * constraint: ""
+     * @param {DOM_Event} event DOM Event
+     */
     addColumn(event){
         this.setState(state=>{
             return { columns : [...state.columns,
@@ -57,6 +72,11 @@ export default class Froms extends React.Component{
         event.preventDefault();
     }
 
+    /**
+     * Change the correct state (columns[id])
+     * @param {DOM Event} event DOM Event
+     * @param {faker_UUID} id Faker_UUID
+     */
     onChange(event,id){
         const key = event.target.name;
         this.setState(state =>{
@@ -70,11 +90,19 @@ export default class Froms extends React.Component{
         });
     }
 
+    /**
+     * Toggle a button remove for every rows
+     * @param {DOM_Event} event DOM Event
+     */
     showRemoveColumn(event){
         this.setState(state => ({isRemove : !state.isRemove}));
         event.preventDefault();
-    }
+    }   
 
+    /**
+     * Remove a row who has the id = id
+     * @param {faker_UUID} id Faker UUID
+     */
     onRemove(id){
         this.setState(state =>{
             let tab = [...state.columns].filter(el => el.id !== id);

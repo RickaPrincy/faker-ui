@@ -21,10 +21,19 @@ export default class Column extends React.Component{
         this.handleRemove = this.handleRemove.bind(this);
     }
 
+    /**
+     * Give event and column.id to this.props.onChange 
+     * @param {DOM_Event} event DOM Event
+     */
     handleChange(event){
         this.props.onChange(event, this.props.column.id);
         event.preventDefault();
     }
+
+    /**
+     * Give column.id to this.props.onRemove
+     * @param {DOM_Event} event DOM Event
+     */
     handleRemove(event){
         this.props.onRemove(this.props.column.id);
         event.preventDefault();
