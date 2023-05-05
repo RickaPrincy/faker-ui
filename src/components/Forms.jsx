@@ -8,13 +8,15 @@ export default class Froms extends React.Component{
     constructor(){
         super();
         this.state = {
+            url : "",
             isRemove : false,
             numberOfRows : "",
-            fileName : "",
+            tableName : "",
             columns : []
         }
         ;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.resetUrl = this.resetUrl.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.addColumn = this.addColumn.bind(this);
         this.onChange = this.onChange.bind(this);
@@ -23,7 +25,7 @@ export default class Froms extends React.Component{
     }
 
     /**
-     * Change the state fileName or numberOfRows
+     * Change the state tableName or numberOfRows
      * @param {DOM_Event} event DOM Event
      */
     handleChange(event){
@@ -32,7 +34,7 @@ export default class Froms extends React.Component{
                 this.setState({numberOfRows : event.target.value });
                 break;
             case "text" : 
-                this.setState({fileName : event.target.value });
+                this.setState({tableName : event.target.value });
                 break;
             default : break;
         }
@@ -44,8 +46,26 @@ export default class Froms extends React.Component{
      * @param {DOM_Event} event DOM Event
      */
     handleSubmit(event){
-        console.log("submit");
+        const options = {
+            method: "POST",
+            headers : {"Content-type" : "application/json"},
+            body: JSON.stringify(this.state)
+        }
+        
+        fetch(`http://localhost:5000`,options)
+        .then(response => response.json())
+        .then(data => {
+            this.setState({url : data.url});
+        })
+        .catch(error => console.error('Erreur lors de la requête', error));
+
         event.preventDefault();
+    }
+
+    resetUrl(){
+        setTimeout(()=>{
+            this.setState({tableName : "", numberOfRows : "", url : "",columns : []});
+        },1000);
     }
 
     /**
@@ -113,13 +133,13 @@ export default class Froms extends React.Component{
 
 
     render(){
-        const {fileName, numberOfRows,columns,isRemove}  = this.state;
+        const {tableName, numberOfRows,columns,isRemove,url}  = this.state;
 
         return <div className="container bg-white InsertInfo mt-5">
             
             <form action="submit" className="w-100 text-dark" onSubmit={this.handleSubmit}>
                 
-                <InsertInfo fileName={fileName} numberOfRows={numberOfRows} handleChange={this.handleChange}/>
+                <InsertInfo tableName={tableName} resetUrl={this.resetUrl} url={url} numberOfRows={numberOfRows} handleChange={this.handleChange}/>
                 
                 <hr />
                 <h2 className="mt-3 f-20 fw-bold">Table Columns : </h2>
