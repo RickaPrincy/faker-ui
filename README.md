@@ -9,7 +9,7 @@ This is a frontend application that you can use with my [Faker Backend](https://
 
 To get started, you'll need to clone my backend server [Faker Backend](https://github.com/RickaPrincy/faker-backend.git) first and this repository.
 
-After that, install depedencies for both repository using `npm install` and that's it, launch the backend-server and the this faker-ui and you can generate fake data easily.
+After that, install depedencies for both repositories using `npm install` and that's it, launch the backend-server and the this faker-ui and you can generate fake data easily.
 
 ## **Usage**
 
@@ -21,7 +21,7 @@ After that, install depedencies for both repository using `npm install` and that
 
 - Click the "Generate" button to send a request to the backend server, which will generate the data and send back a response with a link to the SQL file containing the data. 
 
-- Once you click the "Generate" button, there should be a world : "Download your file here!" so you just click the world "here" do download you file.
+- Once you click the "Generate" button, a phrase : "Download your file here!" should appear so you can just click the world "here" do download your file.
 
 ![Result](/img/result.png "result of the example")
 
