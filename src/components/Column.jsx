@@ -38,10 +38,11 @@ export default class Column extends React.Component{
             { id : 32, value : "full_name" },
             { id : 33, value : "middle_name" },
             { id : 34, value : "jobDescriptor" },
-            { id : 35, value : "sex" },
-            { id : 36, value : "vehicule" },
-            { id : 37, value : "fileName" },
-            { id : 38, value : "phoneNumber" }
+            { id : 35, value : "jobType" },
+            { id : 36, value : "sex" },
+            { id : 37, value : "vehicule" },
+            { id : 38, value : "fileName" },
+            { id : 39, value : "phoneNumber" }
         ];
 
         this.handleChange = this.handleChange.bind(this);

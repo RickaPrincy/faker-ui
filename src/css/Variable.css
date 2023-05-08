@@ -6,5 +6,5 @@
 body::-webkit-scrollbar { width: 8px; }
 body::-webkit-scrollbar-thumb { background-color: rgb(231, 38, 38); }
 body::-webkit-scrollbar-track { background-color: black; }
-body { font-family: Arial, Helvetica, sans-serif; padding-bottom: 300px;}
-.bg-black-hidden { background-color: rgba(0, 0, 0, 0.856); }
+body { font-family: Arial, Helvetica, sans-serif;}
+.bg-black-hidden { background-color: rgba(0, 0, 0, 0.856); padding-bottom: 300px;}
