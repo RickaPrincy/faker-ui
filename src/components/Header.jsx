@@ -1,8 +1,8 @@
-import "../css/Header.css";
-import "../css/Variable.css";
+import "../assets/css/Header.css"
+import "../assets/css/Variable.css"
 import Button from "./Button";
 
-export default function Header(){
+function Header(){
     const handleClick = () => window.scrollTo(0,window.innerHeight);
 
     return <header className="d-flex justify-content-center align-items-center flex-column">
@@ -10,3 +10,5 @@ export default function Header(){
         <Button color="danger btn-started f-18" onClick={handleClick}>Get Started</Button>
     </header>
 }
+
+export default Header;

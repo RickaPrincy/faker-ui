@@ -1,6 +1,6 @@
 import React from "react";
-import "../css/Input.css"
-import "../css/Variable.css"
+import "../assets/css/Input.css"
+import "../assets/css/Variable.css"
 
 const Input = React.memo(({placeholder,value,onChange,type,max})=>{
     return <div className="Input">

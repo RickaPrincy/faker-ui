@@ -1,6 +1,6 @@
 import React from "react";
 import Column from "./Column";
-import "../css/Table.css";
+import "../assets/css/Table.css";
 
 export default function Table({columns,isRemove, onRemove,onChange}){
     return <table className="w-100">

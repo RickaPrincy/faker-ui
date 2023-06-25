@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Variable.css";
+import "../assets/css/Variable.css";
 
 export default function Title(){
     return <div className="pb-2 pt-5">

@@ -1,8 +1,8 @@
 import React from "react";
+import { v4 as uuid } from "uuid";
 import InsertInfo from "./InsertInfo"
 import Button from "./Button";
 import Table from "./Table.jsx";
-import { faker } from "@faker-js/faker";
 
 export default class Froms extends React.Component{
     constructor(){
@@ -80,7 +80,7 @@ export default class Froms extends React.Component{
         this.setState(state=>{
             return { columns : [...state.columns,
                     { 
-                        id : faker.datatype.uuid(),
+                        id : uuid(),
                         name : "", 
                         type : "varchar",
                         constraint : ""
