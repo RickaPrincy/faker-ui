@@ -19,8 +19,7 @@ export default function Table({columns,isRemove, onRemove,onChange}){
         <tbody>
             {columns.map(el =>{
                     return <Column key={el.id} column={el} onRemove={onRemove} isRemove={isRemove} onChange ={onChange}/>
-                }
-            )}
+            })}
         </tbody>
     </table>
 }

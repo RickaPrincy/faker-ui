@@ -4,11 +4,9 @@ body{
     background-attachment: fixed;
 }
 
-header{
+.bg-hidden{
+    background-color: rgba(0, 0, 0, 0.678);
     width: 100%;
-    height: 100vh;
-}
-
-.btn-started{
-    padding: 10px 30px;
+    height: 100%;
+    padding-bottom: 200px;
 }

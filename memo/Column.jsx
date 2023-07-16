@@ -1,4 +1,17 @@
 import React from "react";
+import useAxiosGet from "../Hooks/useAxiosGet";
+
+
+function Column() {
+    const [data, pending, error] = useAxiosGet("http://localhost:5000/types");
+    return (
+        <tr>
+
+        </tr>
+    );
+}
+
+export default Column;
 
 export default class Column extends React.Component{
     constructor(props){
