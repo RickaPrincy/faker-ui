@@ -1,0 +1,39 @@
+form{
+    border-radius: 15px;
+}
+
+.input{
+    padding: 7px 15px;
+    outline: none;
+    font-size: 18px;
+    width: 100%;
+    border: none;
+    background: none;
+}
+
+.table-columns{
+    font-size: 20px;
+}
+
+table col:nth-of-type(1), col:nth-of-type(2){
+    width: 18%;
+}
+
+table col:nth-of-type(3){
+    width: 64%;
+}
+
+table{
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td, tr{
+    border: 1px solid rgb(77, 76, 76) !important;
+    text-align: center;
+    padding: 5px;
+}
+
+select{
+    margin: 0px;
+}
